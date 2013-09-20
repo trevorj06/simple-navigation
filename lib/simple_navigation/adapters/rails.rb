@@ -38,8 +38,8 @@ module SimpleNavigation
         template.current_page?(url) if template
       end
       
-      def link_to(name, url, options={})
-        template.link_to(html_safe(name), url, options) if template
+      def link_to(name=nil, url=nil, options={}, &block)
+        template.link_to(html_safe(name), url, options, &block) if template
       end
       
       def content_tag(type, content, options={})
